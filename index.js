@@ -1,7 +1,6 @@
 import express from "express";
 import xmlparser from "express-xml-bodyparser";
 
-
 const PORT = 3000;
 let app = express();
 
@@ -16,7 +15,8 @@ app.post('/saml/', function(req, res, next){
     
         let result = attributes.reduce((data, el) => { 
                 data[el.$.Name] = el['saml:attributevalue']._;
-                return data; }, 
+                return data; 
+            },
             {}
         );
         res.redirect({
