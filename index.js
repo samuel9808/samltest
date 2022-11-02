@@ -19,7 +19,7 @@ app.post('/saml/', function(req, res, next){
             },
             {}
         );
-        res.redirect({
+        res.json({
             attributes: result
         })
 
